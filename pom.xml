@@ -1,0 +1,30 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <!-- parent pom -->
+  <groupId>dev.a2.eproject</groupId>
+  <artifactId>eproject</artifactId>
+  <packaging>pom</packaging>
+  <version>1.0-SNAPSHOT</version>
+
+
+  <!-- sub modules -->
+  <modules>
+    <module>estore</module>
+    <module>billboard</module>
+  </modules>
+
+  <build>
+  <finalName>estore</finalName>
+  <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
+  <plugins>
+  <plugin>
+    <groupId>org.wildfly.plugins</groupId>
+    <artifactId>wildfly-maven-plugin</artifactId>
+    <version>2.0.1.Final</version>
+  </plugin>
+  </plugins>
+  </pluginManagement>
+  </build>
+</project>

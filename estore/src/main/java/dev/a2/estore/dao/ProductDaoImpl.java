@@ -34,7 +34,6 @@ import org.apache.log4j.Logger;
 import org.hibernate.LockMode;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -169,7 +168,6 @@ public class ProductDaoImpl implements ProductDao {
         if (quantity <= availableQuantity) {
             product.setQuantityInStock(availableQuantity - quantity);
             product.setQuantityReserved(product.getQuantityReserved() + quantity);
-            //session.saveOrUpdate(product);
         } else {
             throw new ProductReserveException("Requested amount is not available.");
         }
@@ -184,7 +182,6 @@ public class ProductDaoImpl implements ProductDao {
         Integer reservedQuantity = product.getQuantityReserved();
         product.setQuantityInStock(availableQuantity + quantity);
         product.setQuantityReserved(reservedQuantity - quantity);
-        //session.saveOrUpdate(product);
     }
 
     @Override

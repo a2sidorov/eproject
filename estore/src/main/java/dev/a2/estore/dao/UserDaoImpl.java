@@ -73,15 +73,6 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public List<User> findUsersByCriteria(final SearchUsersDto searchUsersDto) {
-        /*
-        @SuppressWarnings("unchecked")
-        TypedQuery<User> query = sessionFactory
-                .getCurrentSession()
-                .createQuery("FROM User u " +
-                        "WHERE (:firstName is null or :firstName is '' or u.firstName = :firstName) " +
-                        "AND (:lastName is null or :lastName '' or u.lastName = :lastName) " +
-                        "AND (:email is null or :email is '' or u.email = :email)");
-                        */
         @SuppressWarnings("unchecked")
         TypedQuery<User> query = sessionFactory
                 .getCurrentSession()

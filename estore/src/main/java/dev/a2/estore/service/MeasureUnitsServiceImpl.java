@@ -78,7 +78,7 @@ public class MeasureUnitsServiceImpl implements MeasureUnitsService {
         MeasureUnits measureUnits = measureUnitsDao.findById(measureUnitsId);
         List<Product> products = productDao.findProductsByMeasureUnitsId(measureUnitsId);
 
-        if (products.size() > 0) {
+        if (!products.isEmpty()) {
             throw new MeasureUnitsDeleteException("Measure units can not be deleted " +
                     "while there is a product that uses them ");
         }

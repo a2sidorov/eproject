@@ -191,7 +191,7 @@ class UserServiceTest {
             userService.addUserAddress(user, userAddressDto);
 
             // assert
-            assertEquals(user.getAddresses().size(), 1);
+            assertEquals(1, user.getAddresses().size());
             verify(userDao, times(1)).update(user);
         }
     }
@@ -251,7 +251,7 @@ class UserServiceTest {
             userService.removeUserAddress(user, 1L);
 
             // assert
-            assertEquals(user.getAddresses().size(), 1);
+            assertEquals(1, user.getAddresses().size());
             verify(userDao, times(1)).update(user);
         }
 

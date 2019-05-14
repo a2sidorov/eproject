@@ -94,7 +94,7 @@ public class CategoryServiceImpl implements CategoryService {
 
         if (category.getType().equals("folder")) {
             List<Long> categoriesIds = getSubCategoriesIds(category.getSubCategories());
-            if (categoriesIds.size() > 0) {
+            if (!categoriesIds.isEmpty()) {
                 products = productDao.getProductsByCategoriesIds(categoriesIds);
             } else {
                 products = new ArrayList<>();
@@ -103,7 +103,7 @@ public class CategoryServiceImpl implements CategoryService {
             products = productDao.getProductsByCategoryId(categoryId);
         }
 
-        if (products.size() > 0) {
+        if (!products.isEmpty()) {
             throw new CategoryDeleteException("Category cannot be deleted while it has products.");
         }
         categoryDao.delete(category);

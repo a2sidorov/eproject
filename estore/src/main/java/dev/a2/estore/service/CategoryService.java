@@ -78,7 +78,6 @@ public interface CategoryService {
      * @param categoryId the id of the category that needs to be renamed.
      * @param newName the new category name.
      */
-    //void renameCategory(CategoryDto categoryDto);
     void renameCategory(Long categoryId, String newName);
 
     /**

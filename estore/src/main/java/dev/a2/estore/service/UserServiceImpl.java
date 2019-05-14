@@ -158,7 +158,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void updateUserDetails(final User user, final UserDetailsDto userDetailsDto) throws DateTimeParseException {
+    public void updateUserDetails(final User user, final UserDetailsDto userDetailsDto) {
         user.setFirstName(userDetailsDto.getFirstName());
         user.setLastName(userDetailsDto.getLastName());
         user.setDateOfBirth(userDetailsDto.getDateOfBirth());
@@ -213,7 +213,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public UserDetails loadUserByUsername(final String email) throws UsernameNotFoundException {
+    public UserDetails loadUserByUsername(final String email) {
         User user = userDao.findByEmail(email);
 
         if (user == null) {

@@ -96,7 +96,7 @@ class ProductEditTest {
     void getCreateProductPageRequest6() throws Exception {
         this.mockMvc.perform(get("/product/99/edit"))
                 .andDo(print())
-                .andExpect(status().isNotFound());
+                .andExpect(status().isBadRequest());
     }
 
     @DisplayName("when request POST '/product/create' with changed category id " +

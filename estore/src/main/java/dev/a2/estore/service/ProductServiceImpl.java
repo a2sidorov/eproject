@@ -128,7 +128,7 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public void reserveProducts(final List<OrderProduct> orderProducts) throws ProductReserveException {
+    public void reserveProducts(final List<OrderProduct> orderProducts) {
         for (int i = 0; i < orderProducts.size(); i++) {
             OrderProduct orderProduct = orderProducts.get(i);
             try {
@@ -236,7 +236,7 @@ public class ProductServiceImpl implements ProductService {
             products = products.stream().filter(product -> {
                 boolean result = true;
 
-                if (product.getAttributes().size() == 0) {
+                if (product.getAttributes().isEmpty()) {
                     result = false;
                 }
 
@@ -328,7 +328,7 @@ public class ProductServiceImpl implements ProductService {
                 rowCounter++;
                 ProductDto productDto = productDtoIterator.next();
                 Set<ConstraintViolation<ProductDto>> violations = validator.validate(productDto);
-                if (violations.size() == 0) {
+                if (violations.isEmpty()) {
                     if (productDto.getId() == null) {
                         save(productDto);
                     } else {

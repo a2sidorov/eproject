@@ -47,7 +47,6 @@ import dev.a2.estore.model.Order;
 import dev.a2.estore.model.PaymentStatus;
 import dev.a2.estore.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.io.File;
@@ -126,7 +125,6 @@ public class PdfServiceImpl implements PdfService {
         String code = String.format(format, order.getId());
         BarcodeEAN barcode = new BarcodeEAN();
         barcode.setCodeType(Barcode.EAN13);
-        //codeEAN.setCode("4512345678906");
         barcode.setCode(code);
         Image image = barcode.createImageWithBarcode(pdfContentByte, null, null);
         image.setAbsolutePosition(500, 800);
@@ -247,7 +245,6 @@ public class PdfServiceImpl implements PdfService {
     private PdfPCell getCell(final String text, final Font font) {
         PdfPCell cell = new PdfPCell(new Phrase(text, font));
         cell.setPadding(3);
-        //cell.setHorizontalAlignment(alignment);
         cell.setBorderWidthBottom(1);
         cell.setBorder(PdfPCell.NO_BORDER);
         return cell;

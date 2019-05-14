@@ -27,8 +27,7 @@ package dev.a2.estore.controller;
 
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.GetMapping;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -52,7 +51,7 @@ public class ErrorController {
      * @param e the exception.
      * @return view name 'error-404'.
      */
-    @RequestMapping(value = "errors", method = RequestMethod.GET)
+    @GetMapping("/errors")
     public String renderErrorPage(final HttpServletRequest request, final Exception e) {
         logger.error("Request: " + request.getRequestURL() + " raised " + e);
         return "error-404";

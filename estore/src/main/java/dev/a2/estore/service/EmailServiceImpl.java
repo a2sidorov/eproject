@@ -26,7 +26,6 @@
 package dev.a2.estore.service;
 
 import dev.a2.estore.model.CompanyInfo;
-import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.mail.javamail.JavaMailSender;
@@ -45,11 +44,6 @@ import java.io.File;
  */
 @Service
 public class EmailServiceImpl implements EmailService {
-
-    /**
-     * Initializes logger for this class.
-     */
-    private static final Logger logger = Logger.getLogger(EmailService.class);
 
     /**
      * Injects JavaMailSender.

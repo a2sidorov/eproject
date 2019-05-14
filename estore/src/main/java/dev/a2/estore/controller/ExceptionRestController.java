@@ -55,11 +55,11 @@ public class ExceptionRestController {
     private static final Logger logger = Logger.getLogger(ExceptionRestController.class);
 
     /**
-     * Intercepts the method argument not valid exception and returns response with status 404.
+     * Intercepts different exceptions and returns response with status 404.
      *
      * @param request the http request.
      * @param e the method argument not valid exception.
-     * @return the response entity with error message and status 404.
+     * @return the response entity with error message and status 400.
      */
     @ExceptionHandler({MethodArgumentNotValidException.class,
                        MethodArgumentTypeMismatchException.class,

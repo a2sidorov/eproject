@@ -248,7 +248,7 @@ public class ProductRestController {
             list.add(map);
         });
 
-        if (list.size() == 0) {
+        if (list.isEmpty()) {
             return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
         }
         return list;

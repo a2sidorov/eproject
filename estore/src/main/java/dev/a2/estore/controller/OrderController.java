@@ -81,7 +81,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttribute;
 import org.springframework.web.bind.annotation.SessionAttributes;
-import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 /**
@@ -248,7 +247,7 @@ public class OrderController {
                            final @SessionAttribute("executorService") ScheduledExecutorService executorService,
                            final HttpSession session,
                            final RedirectAttributes redirectAttributes) {
-        if (order.getOrderProducts().size() == 0) {
+        if (order.getOrderProducts().isEmpty()) {
             return "redirect:/home";
         }
         List<OrderProduct> orderProducts = order.getOrderProducts();

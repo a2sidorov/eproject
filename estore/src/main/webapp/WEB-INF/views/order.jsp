@@ -86,9 +86,6 @@
     </tr>
 </table>
     <div>
-        <!--
-        <a href="/checkout/reserve">Proceed to checkout</a>
-        -->
         <a onclick="proceedToReserve()">Proceed to checkout</a>
 
     </div>

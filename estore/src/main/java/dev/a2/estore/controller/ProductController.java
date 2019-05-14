@@ -286,7 +286,6 @@ public class ProductController {
         model.addAttribute("categoryLeafs", categoryService.getAllCategories());
         model.addAttribute("allMeasureUnits", measureUnitsService.getAllMeasureUnits());
         model.addAttribute("attributes", attributeService.getAllProductAttributes(product.getId()));
-        //model.addAttribute("productQuantityDto", new ProductQuantityDto());
         model.addAttribute("productDto", new ProductDto());
         model.addAttribute("order");
         return "edit-product";

@@ -36,8 +36,6 @@ import java.math.BigDecimal;
  */
 public class ProductQuantityDto {
 
-    //private String errorMessage;
-
     /**
      * The id of a product that needs to be added to an order.
      */
@@ -68,16 +66,6 @@ public class ProductQuantityDto {
      * The sum of total selling prices in an order.
      */
     private BigDecimal orderPrice;
-
-    /*
-    public String getErrorMessage() {
-        return errorMessage;
-    }
-
-    public void setErrorMessage(String errorMessage) {
-        this.errorMessage = errorMessage;
-    }
-    */
 
     /* Getters ans setters */
 

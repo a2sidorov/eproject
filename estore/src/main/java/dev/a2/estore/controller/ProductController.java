@@ -36,7 +36,6 @@ import dev.a2.estore.dto.PriceListDto;
 import dev.a2.estore.dto.ProductDto;
 import dev.a2.estore.exception.PriceListExportException;
 import dev.a2.estore.exception.ProductNotFoundException;
-import dev.a2.estore.model.Order;
 import dev.a2.estore.model.Price;
 import dev.a2.estore.model.Product;
 import dev.a2.estore.service.AttributeService;
@@ -75,7 +74,6 @@ import javax.validation.constraints.NotNull;
  */
 @Controller
 @Validated
-@SessionAttributes("order")
 public class ProductController {
 
     /**
@@ -118,29 +116,6 @@ public class ProductController {
      */
     @Value("${top.products.max.length}")
     private int topProductsLength;
-
-    /**
-     * Initializes the shopping cart.
-     *
-     * @return order.
-     */
-    @ModelAttribute("order")
-    public Order initCart() {
-        return new Order();
-    }
-
-    /**
-     * Generates the home page.
-     *
-     * @param  model the model
-     * @return the view name 'home'.
-     */
-    @GetMapping("/")
-    public String showHomePage(final Model model) {
-        model.addAttribute("categories", categoryService.getTopLevelCategories());
-        model.addAttribute("order");
-        return "home";
-    }
 
     /**
      * Generates a product page with information about a product.
@@ -287,7 +262,6 @@ public class ProductController {
         model.addAttribute("allMeasureUnits", measureUnitsService.getAllMeasureUnits());
         model.addAttribute("attributes", attributeService.getAllProductAttributes(product.getId()));
         model.addAttribute("productDto", new ProductDto());
-        model.addAttribute("order");
         return "edit-product";
     }
 
@@ -339,7 +313,6 @@ public class ProductController {
         }
         model.addAttribute("product", product);
         model.addAttribute("imageDto", new ImageDto());
-        model.addAttribute("order");
         return "update-image";
     }
 
@@ -506,7 +479,6 @@ public class ProductController {
     @GetMapping("/categories/edit")
     public String showEditCategories(final Model model) {
         model.addAttribute("categories", categoryService.getTopLevelCategories());
-        model.addAttribute("order");
         return "edit-categories";
     }
 

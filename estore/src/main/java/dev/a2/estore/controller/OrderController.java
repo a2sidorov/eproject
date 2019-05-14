@@ -58,13 +58,7 @@ import dev.a2.estore.model.OrderStatus;
 import dev.a2.estore.model.PaymentMethod;
 import dev.a2.estore.model.PaymentStatus;
 import dev.a2.estore.model.User;
-import dev.a2.estore.service.EmailService;
-import dev.a2.estore.service.JmsService;
-import dev.a2.estore.service.OrderService;
-import dev.a2.estore.service.PaymentServiceImpl;
-import dev.a2.estore.service.PdfService;
-import dev.a2.estore.service.ProductService;
-import dev.a2.estore.service.UserService;
+import dev.a2.estore.service.*;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -81,6 +75,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttribute;
 import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 /**
@@ -97,6 +92,12 @@ public class OrderController {
      * Initializes logger for this class.
      */
     private static final Logger logger = Logger.getLogger(OrderController.class);
+
+    /**
+     * Injects bean CategoryService.
+     */
+    @Autowired
+    private CategoryService categoryService;
 
     /**
      * Injects bean UserService.
@@ -183,6 +184,19 @@ public class OrderController {
      */
     @Value("${top.products.max.length}")
     private int topProductsLength;
+
+    /**
+     * Generates the home page.
+     *
+     * @param  model the model
+     * @return the view name 'home'.
+     */
+    @GetMapping("/")
+    public String showHomePage(final Model model) {
+        model.addAttribute("categories", categoryService.getTopLevelCategories());
+        model.addAttribute("order");
+        return "home";
+    }
 
     /**
      * Generates the cart page.
@@ -351,6 +365,7 @@ public class OrderController {
                               final @SessionAttribute("timerTask") Future timerTask,
                               final @ModelAttribute("checkoutDto") @Validated CheckoutDto checkoutDto,
                               final @SessionAttribute("startTime") LocalDateTime startTime,
+                              final SessionStatus sessionStatus,
                               final Authentication authentication,
                               final RedirectAttributes redirectAttributes) {
         logger.info("An order checkout request " + checkoutDto);
@@ -410,8 +425,10 @@ public class OrderController {
         // Sends the updated list of top-selling-products to the billboard application.
         jmsService.send(productService.getTopSellingProducts(topProductsLength));
         logger.info("Products have been purchased.");
+
         String message = messageSource.getMessage("product.checkout.success", null, Locale.US);
         redirectAttributes.addFlashAttribute("message", message);
+        sessionStatus.setComplete();
         return "redirect:/message";
     }
 

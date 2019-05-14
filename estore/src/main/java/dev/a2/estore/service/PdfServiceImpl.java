@@ -195,11 +195,10 @@ public class PdfServiceImpl implements PdfService {
 
         // Adding rows to main table
         order.getOrderProducts().forEach(orderProduct -> {
-            mainTable.addCell(getMainCell(orderProduct.getProduct().getName(), mainFont));
-            mainTable.addCell(getMainCell(currencySymbol + orderProduct.getSellingPrice().toString(), mainFont));
-            mainTable.addCell(getMainCell(orderProduct.getQuantity().toString(), mainFont));
-            mainTable.addCell(getMainCell(currencySymbol + orderProduct.calculateTotalSellingPrice().toString(),
-                    mainFont));
+            mainTable.addCell(getMainCell(orderProduct.getProduct().getName()));
+            mainTable.addCell(getMainCell(currencySymbol + orderProduct.getSellingPrice().toString()));
+            mainTable.addCell(getMainCell(orderProduct.getQuantity().toString()));
+            mainTable.addCell(getMainCell(currencySymbol + orderProduct.calculateTotalSellingPrice().toString()));
         });
 
         // Adding the total price cell
@@ -302,10 +301,9 @@ public class PdfServiceImpl implements PdfService {
      * Creates a cell of a main table..
      *
      * @param text the text in a cell.
-     * @param font the font of the text in a cell.
      * @return a main table cell.
      */
-    private PdfPCell getMainCell(final String text, final Font font) {
+    private PdfPCell getMainCell(final String text) {
         PdfPCell cell = new PdfPCell(new Phrase(text, mainFont));
         cell.setPaddingBottom(3f);
         cell.setBorder(Rectangle.BOTTOM);

@@ -51,7 +51,7 @@ public class ErrorController {
      * @param e the exception.
      * @return view name 'error-404'.
      */
-    @GetMapping("/errors")
+    @GetMapping("errors")
     public String renderErrorPage(final HttpServletRequest request, final Exception e) {
         logger.error("Request: " + request.getRequestURL() + " raised " + e);
         return "error-404";

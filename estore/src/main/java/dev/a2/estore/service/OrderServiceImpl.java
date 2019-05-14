@@ -191,11 +191,11 @@ public class OrderServiceImpl implements OrderService {
         }
 
         if (!startDate.getDayOfWeek().equals(DayOfWeek.MONDAY)) {
-            startDate = startDate.minusDays(startDate.getDayOfWeek().getValue() - 1);
+            startDate = startDate.minusDays((long) startDate.getDayOfWeek().getValue() - 1);
         }
 
         if (!endDate.getDayOfWeek().equals(DayOfWeek.SUNDAY)) {
-            endDate = endDate.plusDays(7 - endDate.getDayOfWeek().getValue());
+            endDate = endDate.plusDays(7 - (long) endDate.getDayOfWeek().getValue());
         }
         LocalDateTime startDateTime = startDate.atStartOfDay();
         LocalDateTime endDateTime = endDate.atTime(LocalTime.MAX);

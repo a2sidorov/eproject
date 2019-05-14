@@ -201,7 +201,7 @@ async function commit(check, orderId) {
     }
 
     check.parentElement.style.display = "none";
-    check.parentElement.parentElement.querySelector("i").style.display = "block";
+    check.parentElement.parentElement.querySelector("em").style.display = "block";
 }
 
 function discard(discard) {
@@ -212,7 +212,7 @@ function discard(discard) {
     selectElement.disabled = true;
 
     discard.parentElement.style.display = "none";
-    discard.parentElement.parentElement.querySelector("i").style.display = "block";
+    discard.parentElement.parentElement.querySelector("em").style.display = "block";
 }
 
 function findSelectElement(e) {

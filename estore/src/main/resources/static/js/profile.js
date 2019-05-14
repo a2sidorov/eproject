@@ -161,7 +161,7 @@ function discard(discard) {
     }
 
     discard.parentElement.style.display = "none";
-    discard.parentElement.parentElement.querySelector("i").style.display = "block";
+    discard.parentElement.parentElement.querySelector("em").style.display = "block";
 }
 
 

@@ -89,11 +89,11 @@ section h2 {
     color: #ccc;
     padding: 0px 4px;
 }
-a, i {
+a, em {
     text-decoration: none;
     color: #6c6c6c;
 }
-a:hover, i:hover, button:hover {
+a:hover, em:hover, button:hover {
     cursor: pointer;
     color: black;
 }
@@ -175,7 +175,7 @@ section {
 #signup-main #password-requirements ul li {
     margin: 0px 0px 0px 4px;
 }
-#signup-main #password-requirements ul li i {
+#signup-main #password-requirements ul li em {
     font-size: 14px;
     color: red;
 }
@@ -244,27 +244,27 @@ section {
     justify-content: space-between;
     margin: 16px 0;
 }
-#profile-main .form-edit i {
+#profile-main .form-edit em {
     font-size: 16px;
 }
 #profile-main .form-edit div {
     display: none;
 }
-#profile-main .form-edit div:last-child i {
+#profile-main .form-edit div:last-child em {
     font-size: 20px;
 }
-#profile-main .form-edit div i:first-child {
+#profile-main .form-edit div em:first-child {
     color: #007300;
     margin-right: 10px;
 }
-#profile-main .form-edit div i:first-child:hover {
+#profile-main .form-edit div em:first-child:hover {
     color: #00a800;
     cursor: pointer;
 }
-#profile-main .form-edit div i:last-child {
+#profile-main .form-edit div em:last-child {
     color: #b40000;
 }
-#profile-main .form-edit div i:last-child:hover {
+#profile-main .form-edit div em:last-child:hover {
     color: #f20000;
     cursor: pointer;
 }
@@ -287,7 +287,7 @@ section {
 #password-main form div ul li {
     margin: 0px 0px 0px 4px;
 }
-#password-main form div ul li i {
+#password-main form div ul li em {
     font-size: 14px;
     color: red;
 }
@@ -404,12 +404,12 @@ section {
     background-color: var(--main-button-flick-color);
 
 }
-#home-main #search-bar form button i {
+#home-main #search-bar form button em {
     color: var(--main-inactive-white);
     position:relative;
     top: -2px;
 }
-#home-main #search-bar form button i:hover {
+#home-main #search-bar form button em:hover {
     color: white;
 }
 #home-main #filter-section {
@@ -575,7 +575,7 @@ section {
 #measure-units-main ul {
     width: 100%;
 }
-#measure-units-main ul li button i {
+#measure-units-main ul li button em {
     vertical-align: middle;
     padding-bottom: 2px;
     font-size: 14px;
@@ -658,29 +658,29 @@ section {
     justify-content: space-between;
     margin: 16px 0;
 }
-#edit-product-main .form-edit i {
+#edit-product-main .form-edit em {
     font-size: 16px;
 }
-#edit-product-main .form-edit i:hover {
+#edit-product-main .form-edit em:hover {
     cursor: pointer;
 }
 #edit-product-main .form-edit div {
     display: none;
 }
-#edit-product-main .form-edit div:last-child i {
+#edit-product-main .form-edit div:last-child em {
     font-size: 20px;
 }
-#edit-product-main .form-edit div i:first-child {
+#edit-product-main .form-edit div em:first-child {
     color: #007300;
     margin-right: 10px;
 }
-#edit-product-main .form-edit div i:first-child:hover {
+#edit-product-main .form-edit div em:first-child:hover {
     cursor: pointer;
 }
-#edit-product-main .form-edit div i:last-child {
+#edit-product-main .form-edit div em:last-child {
     color: #b40000;
 }
-#edit-product-main .form-edit div i:last-child:hover {
+#edit-product-main .form-edit div em:last-child:hover {
     color: #f20000;
     cursor: pointer;
 }
@@ -818,16 +818,16 @@ section {
 #order-main table .remove-button a:hover {
     background-color: white;
 }
-#order-main table .remove-button a i {
+#order-main table .remove-button a em {
     color: var(--main-inactive-color);
 
 }
-#order-main table .remove-button a i:hover {
+#order-main table .remove-button a em:hover {
     color: black;
     cursor: pointer;
 }
 
-#order-main table .remove-button a i:active {
+#order-main table .remove-button a em:active {
     color: var(--main-inactive-color);
 }
 #order-main table .total-price {
@@ -978,13 +978,13 @@ section {
     background-color: Transparent;
     background-repeat: repeat;
 }
-#orders-main #orders-table tr button i {
+#orders-main #orders-table tr button em {
     color: #555555;
 }
-#orders-main #orders-table tr button i:hover {
+#orders-main #orders-table tr button em:hover {
     color: black;
 }
-#orders-main #orders-table tr button i:active {
+#orders-main #orders-table tr button em:active {
     color: grey;
 }
 #orders-main #orders-table tr button:hover {
@@ -1019,30 +1019,30 @@ section {
     justify-content: space-between;
     margin: 16px 0;
 }
-#orders-main .form-edit i {
+#orders-main .form-edit em {
     font-size: 16px;
     color: var(--main-inactive-color);
 }
-#orders-main .form-edit i:hover {
+#orders-main .form-edit em:hover {
     color: black;
     cursor: pointer;
 }
 #orders-main .form-edit div {
     display: none;
 }
-#orders-main .form-edit div:last-child i {
+#orders-main .form-edit div:last-child em {
     font-size: 20px;
 }
-#orders-main .form-edit div i:first-child {
+#orders-main .form-edit div em:first-child {
     color: #007300;
 }
-#orders-main .form-edit div i:first-child:hover {
+#orders-main .form-edit div em:first-child:hover {
     cursor: pointer;
 }
-#orders-main .form-edit div i:last-child {
+#orders-main .form-edit div em:last-child {
     color: #b40000;
 }
-#orders-main .form-edit div i:last-child:hover {
+#orders-main .form-edit div em:last-child:hover {
     color: #f20000;
     cursor: pointer;
 }
@@ -1197,7 +1197,7 @@ section {
 #edit-categories-main > ul {
     height: 90%;
 }
-#edit-categories-main .edit-section button i {
+#edit-categories-main .edit-section button em {
     font-size: 18px;
 
 }
@@ -1217,7 +1217,7 @@ section {
     outline: none;
     background-color: white;
 }
-#edit-categories-main ul li button i {
+#edit-categories-main ul li button em {
     vertical-align: middle;
     padding-bottom: 2px;
     font-size: 14px;

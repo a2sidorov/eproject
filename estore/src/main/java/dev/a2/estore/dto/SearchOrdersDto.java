@@ -48,10 +48,10 @@ public class SearchOrdersDto {
     private Long orderId;
 
     /**
-     * The start date of a time period. Inititally set to minus two weeks from the present day.
+     * The start date of a time period. Inititally set to the present day.
      */
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
-    private LocalDate startDate = LocalDate.now().minusWeeks(2);
+    private LocalDate startDate = LocalDate.now();
 
     /**
      * The end date of a time period. Initially set to the present day.

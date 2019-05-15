@@ -25,9 +25,21 @@
 
 package dev.a2.estore.service;
 
-import dev.a2.estore.model.*;
+import dev.a2.estore.model.Address;
+import dev.a2.estore.model.CompanyInfo;
+import dev.a2.estore.model.Country;
 import dev.a2.estore.model.Order;
-import org.junit.jupiter.api.*;
+import dev.a2.estore.model.Order;
+import dev.a2.estore.model.OrderProduct;
+import dev.a2.estore.model.OrderProductPK;
+import dev.a2.estore.model.OrderStatus;
+import dev.a2.estore.model.Price;
+import dev.a2.estore.model.Product;
+import dev.a2.estore.model.User;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Nested;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Spy;
@@ -40,6 +52,9 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
+
+import static com.sun.javaws.JnlpxArgs.verify;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @DisplayName("Testing PdfService")
 @ExtendWith(MockitoExtension.class)
@@ -144,6 +159,7 @@ class PdfServiceTest {
             } catch (Exception e) {
                 e.printStackTrace();
             }
+            assertTrue(file.exists());
         }
 
     }

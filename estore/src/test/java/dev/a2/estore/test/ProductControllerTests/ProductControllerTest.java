@@ -35,14 +35,6 @@ class ProductControllerTest {
                 .build();
     }
 
-    @DisplayName("when request GET '/' then home page returns")
-    @Test
-    void getHomePage() throws Exception {
-        this.mockMvc.perform(get("/"))
-                .andExpect(status().isOk())
-                .andExpect(view().name("home"));
-    }
-
     @DisplayName("when request GET '/product' then with valid product id then product page returns")
     @Test
     void getProductPageRequest1() throws Exception {

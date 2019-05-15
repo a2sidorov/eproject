@@ -201,6 +201,7 @@ public class ProductServiceImpl implements ProductService {
             fileOutputStream.write(image.getBytes());
         } catch (IOException e) {
             logger.error(e);
+            return;
         }
         productDao.update(product);
     }

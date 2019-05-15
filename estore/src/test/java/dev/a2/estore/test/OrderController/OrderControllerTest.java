@@ -64,6 +64,14 @@ class OrderControllerTest {
                 .build();
     }
 
+    @DisplayName("when request GET '/' then home page returns")
+    @Test
+    void getHomePage() throws Exception {
+        this.mockMvc.perform(get("/"))
+                .andExpect(status().isOk())
+                .andExpect(view().name("home"));
+    }
+
     @DisplayName("when request GET '/orders' then page 'orders' returns")
     @Test
     void getOrdersPage() throws Exception {

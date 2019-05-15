@@ -206,9 +206,7 @@ async function commit(check, orderId) {
 
 function discard(discard) {
     const selectElement = findSelectElement(discard);
-
     selectElement.value = selectElement.getAttribute("data-currentValue");
-
     selectElement.disabled = true;
 
     discard.parentElement.style.display = "none";

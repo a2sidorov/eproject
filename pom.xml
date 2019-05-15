@@ -15,14 +15,6 @@
     <module>billboard</module>
   </modules>
 
-  <properties>
-    <!-- Sonar -->
-    <sonar.java.coveragePlugin>jacoco</sonar.java.coveragePlugin>
-    <sonar.dynamicAnalysis>reuseReports</sonar.dynamicAnalysis>
-    <sonar.jacoco.reportPath>${project.basedir}/../target/jacoco.exec</sonar.jacoco.reportPath>
-    <sonar.language>java</sonar.language>
-  </properties>
-
   <build>
   <finalName>estore</finalName>
   <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
@@ -33,34 +25,6 @@
     <version>2.0.1.Final</version>
   </plugin>
 
-    <plugin>
-      <groupId>org.sonarsource.scanner.maven</groupId>
-      <artifactId>sonar-maven-plugin</artifactId>
-      <version>3.2</version>
-    </plugin>
-    <plugin>
-      <groupId>org.jacoco</groupId>
-      <artifactId>jacoco-maven-plugin</artifactId>
-      <version>0.8.2</version>
-      <configuration>
-        <destFile>${sonar.jacoco.reportPath}</destFile>
-        <append>true</append>
-      </configuration>
-      <executions>
-        <execution>
-          <goals>
-            <goal>prepare-agent</goal>
-          </goals>
-        </execution>
-        <execution>
-          <id>report</id>
-          <phase>prepare-package</phase>
-          <goals>
-            <goal>report</goal>
-          </goals>
-        </execution>
-      </executions>
-    </plugin>
 
 
   </plugins>

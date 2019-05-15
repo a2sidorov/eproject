@@ -415,6 +415,7 @@ public class OrderController {
         try {
             File invoicePdfFile = pdfService.createInvoice(order);
             String subject = "Invoice from " + companyInfo.getName() + " INV" + order.getId();
+
             emailService.sendInvoice(user.getEmail(), subject, invoicePdfFile);
         } catch (MessagingException e) {
             logger.error("Invoice sending failed", e);

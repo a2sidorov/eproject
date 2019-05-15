@@ -26,6 +26,9 @@
             <button type="button" onclick="findProducts()"><em class="material-icons">search</em></button>
         </form>
     </div>
+    <noscript>
+        <h1 class="error">We're sorry, but our site requires Javascript to be enabled to run.</h1>
+    </noscript>
     <section id="filter-section">
         <h2>Filter by attributes</h2>
         <ul id="attribute-list">

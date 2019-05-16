@@ -74,7 +74,6 @@ function validate(input) {
     let isValid, message;
     const inputValue = input.value.trim();
     const inputValueLength = inputValue.length;
-    console.log(inputValueLength)
 
     switch(input.id) {
         case "categoryId":
@@ -129,5 +128,7 @@ function isProductNameValid(inputValue) {
 }
 
 function isNumber(inputValue) {
-    return inputValue !== "" && !isNaN(inputValue);
+    console.log(!isNaN(inputValue) && inputValue >= 0);
+    return !isNaN(inputValue) && inputValue >= 0;
 }
+

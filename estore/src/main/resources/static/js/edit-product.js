@@ -94,8 +94,9 @@ function isProductNameValid(inputValue) {
 }
 
 function isNumber(inputValue) {
-    return !isNaN(inputValue);
+    return !isNaN(inputValue) && inputValue >= 0;
 }
+
 
 function toggleCategory(thisButton) {
     // caculating necessary height based on number of elements
